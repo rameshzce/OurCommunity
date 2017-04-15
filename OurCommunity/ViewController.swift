@@ -20,7 +20,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
         GIDSignIn.sharedInstance().signIn()
     }
     
-    @IBOutlet var googleSignIn: UIView!
+    @IBOutlet var btnFBSignIn: FBSDKLoginButton!
     
     @IBOutlet var btnGSignIn: UIButton!
     
@@ -38,15 +38,15 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
         }
         else
         {
-            let loginButton : FBSDKLoginButton = FBSDKLoginButton()
+           // let loginButton : FBSDKLoginButton = FBSDKLoginButton()
             
-            loginButton.center = self.view.center
+            //loginButton.center = self.view.center
             
-            loginButton.readPermissions = ["public_profile", "email"]
+            btnFBSignIn.readPermissions = ["public_profile", "email"]
             
-            loginButton.delegate = self
+            btnFBSignIn.delegate = self
             
-            self.view.addSubview(loginButton)
+            //self.view.addSubview(loginButton)
         }
         
         //btnGSignIn.setImage(UIImage(named: "google_logo.png"), for: UIControlState.normal)
