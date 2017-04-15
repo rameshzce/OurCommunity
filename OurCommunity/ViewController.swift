@@ -27,10 +27,29 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
         
         GIDSignIn.sharedInstance().uiDelegate = self
         
+        if (FBSDKAccessToken.current() != nil)
+        {
+            
+            print("User Logged In")
+            
+        }
+        else
+        {
+            let loginButton : FBSDKLoginButton = FBSDKLoginButton()
+            
+            loginButton.center = self.view.center
+            
+            loginButton.readPermissions = ["public_profile", "email"]
+            
+            loginButton.delegate = self
+            
+            self.view.addSubview(loginButton)
+        }
+        
         let btnSize : CGFloat = 100
-        signInButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        signInButton = UIButton(frame: CGRect(x: 100, y: 100, width: 200, height: 50))
         //signInButton.center = view.center
-        signInButton.setImage(UIImage(named: "google_logo.png"), for: UIControlState.normal)
+        signInButton.setImage(UIImage(named: "google_signin_button.png"), for: UIControlState.normal)
         signInButton.addTarget(self, action: #selector(signInBtn), for: UIControlEvents.touchUpInside)
         
         //Circular button
@@ -53,24 +72,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
         // [END_EXCLUDE]
         
         
-        if (FBSDKAccessToken.current() != nil)
-        {
-            
-            print("User Logged In")
-            
-        }
-        else
-        {
-            let loginButton : FBSDKLoginButton = FBSDKLoginButton()
-            
-            loginButton.center = self.view.center
-            
-            loginButton.readPermissions = ["public_profile", "email"]
-            
-            loginButton.delegate = self
-            
-            self.view.addSubview(loginButton)
-        }
+        
         
         
         

@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,36 +21,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eYK-6c-kfo">
-                                <rect key="frame" x="56" y="166" width="110" height="200"/>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHP-i6-ywr">
-                                <rect key="frame" x="82" y="453" width="211" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eYK-6c-kfo">
+                                <rect key="frame" x="16" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHP-i6-ywr">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <state key="normal" title="signout">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapSignOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z8w-fB-4Sc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="1uD-bR-c2P"/>
-                                    <constraint firstAttribute="height" constant="30" id="AYE-7I-zOw"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="211" id="G5o-hk-QKD"/>
-                                    <constraint firstAttribute="width" constant="211" id="U6w-qV-Hyq"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="a7Z-4Q-BSZ"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="211" id="oTp-on-GAo"/>
+                                    <constraint firstItem="kHP-i6-ywr" firstAttribute="centerX" secondItem="eYK-6c-kfo" secondAttribute="centerX" id="jEL-TI-HKb"/>
+                                    <constraint firstItem="kHP-i6-ywr" firstAttribute="centerY" secondItem="eYK-6c-kfo" secondAttribute="centerY" id="lo2-k7-Y0o"/>
                                 </constraints>
-                                <state key="normal" title="signout">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didTapSignOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z8w-fB-4Sc"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.0034858230008457032" green="0.1274074185550676" blue="0.76175840736040612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="kHP-i6-ywr" firstAttribute="top" secondItem="eYK-6c-kfo" secondAttribute="bottom" constant="87" id="630-aI-IO1"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kHP-i6-ywr" secondAttribute="bottom" constant="184" id="R1a-vC-foR"/>
-                            <constraint firstAttribute="trailing" secondItem="eYK-6c-kfo" secondAttribute="trailing" constant="209" id="V3e-UT-Ndh"/>
-                            <constraint firstItem="kHP-i6-ywr" firstAttribute="leading" secondItem="aJK-8s-HLj" secondAttribute="leadingMargin" constant="66" id="V7M-nJ-vCP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="kHP-i6-ywr" secondAttribute="trailing" constant="66" id="cXJ-IZ-dLN"/>
-                            <constraint firstItem="eYK-6c-kfo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="146" id="ogX-Vb-Ubr"/>
-                            <constraint firstItem="eYK-6c-kfo" firstAttribute="leading" secondItem="aJK-8s-HLj" secondAttribute="leadingMargin" constant="40" id="xza-9Q-6Qf"/>
+                            <constraint firstItem="eYK-6c-kfo" firstAttribute="width" secondItem="aJK-8s-HLj" secondAttribute="width" id="VHH-Q0-3VT"/>
+                            <constraint firstItem="eYK-6c-kfo" firstAttribute="centerX" secondItem="aJK-8s-HLj" secondAttribute="centerX" id="ij9-H5-bFl"/>
+                            <constraint firstItem="eYK-6c-kfo" firstAttribute="height" secondItem="aJK-8s-HLj" secondAttribute="height" id="pZG-ae-BZ2"/>
+                            <constraint firstItem="eYK-6c-kfo" firstAttribute="centerY" secondItem="aJK-8s-HLj" secondAttribute="centerY" constant="50" id="r3I-dH-E3W"/>
                         </constraints>
                     </view>
                     <connections>
