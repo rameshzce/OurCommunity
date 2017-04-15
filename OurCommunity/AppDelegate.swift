@@ -16,6 +16,7 @@ import GoogleSignIn
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     var window: UIWindow?
+    var vc = ViewController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -53,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         
         if let error = error {
-            print("\(error.localizedDescription)")
+            print("error: \(error.localizedDescription)")
             // [START_EXCLUDE silent]
             NotificationCenter.default.post(
                 name: Notification.Name(rawValue: "ToggleAuthUINotification"), object: nil, userInfo: nil)
@@ -74,6 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 object: nil,
                 userInfo: ["statusText": "Signed:\(String(describing: fullName!))"])
             // [END_EXCLUDE]
+            self.window?.rootViewController?.performSegue(withIdentifier: "userSegue", sender: nil)
         }
     }
     // [END signin_handler]
