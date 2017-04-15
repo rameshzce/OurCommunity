@@ -15,8 +15,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
     // [START viewcontroller_vars]
     //@IBOutlet weak var signInButton: GIDSignInButton!
     @IBOutlet weak var signOutButton: UIButton!
-    @IBOutlet weak var disconnectButton: UIButton!
-    @IBOutlet weak var statusText: UILabel!
     // [END viewcontroller_vars]
     @IBOutlet var signInButton: UIButton!
     @IBAction func signInBtn(_ sender: Any) {
@@ -51,7 +49,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
                                                name: NSNotification.Name(rawValue: "ToggleAuthUINotification"),
                                                object: nil)
         
-        statusText.text = "Initialized Swift app..."
         toggleAuthUI()
         // [END_EXCLUDE]
         
@@ -83,32 +80,19 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
     @IBAction func didTapSignOut(_ sender: AnyObject) {
         GIDSignIn.sharedInstance().signOut()
         // [START_EXCLUDE silent]
-        statusText.text = "Signed out."
         print("Signed out.")
         toggleAuthUI()
         // [END_EXCLUDE]
     }
-    // [END signout_tapped]
-    // [START disconnect_tapped]
-    @IBAction func didTapDisconnect(_ sender: AnyObject) {
-        GIDSignIn.sharedInstance().disconnect()
-        // [START_EXCLUDE silent]
-        statusText.text = "Disconnecting."
-        // [END_EXCLUDE]
-    }
-    // [END disconnect_tapped]
-    // [START toggle_auth]
+
     func toggleAuthUI() {
         if GIDSignIn.sharedInstance().hasAuthInKeychain() {
             // Signed in
             signInButton.isHidden = true
             signOutButton.isHidden = false
-            disconnectButton.isHidden = false
         } else {
             signInButton.isHidden = false
             signOutButton.isHidden = true
-            disconnectButton.isHidden = true
-            statusText.text = "Google Sign in\niOS Demo"
         }
     }
     // [END toggle_auth]
@@ -127,7 +111,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
             self.toggleAuthUI()
             if notification.userInfo != nil {
                 guard let userInfo = notification.userInfo as? [String:String] else { return }
-                self.statusText.text = userInfo["statusText"]!
+                //self.statusText.text = userInfo["statusText"]!
             }
         }
     }

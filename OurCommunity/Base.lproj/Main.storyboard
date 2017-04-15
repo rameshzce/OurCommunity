@@ -22,21 +22,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pk3-Ul-G9r">
-                                <rect key="frame" x="73" y="503" width="211" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Bvc-Qc-f7t"/>
-                                    <constraint firstAttribute="width" constant="211" id="Rba-u1-Fop"/>
-                                    <constraint firstAttribute="height" constant="30" id="bel-tj-VKU"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="211" id="zfe-E0-NWe"/>
-                                </constraints>
-                                <state key="normal" title="disconnect">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didTapDisconnect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FE2-wh-q4I"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eYK-6c-kfo">
+                                <rect key="frame" x="56" y="166" width="110" height="200"/>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHP-i6-ywr">
                                 <rect key="frame" x="82" y="453" width="211" height="30"/>
                                 <constraints>
@@ -54,36 +42,20 @@
                                     <action selector="didTapSignOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z8w-fB-4Sc"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Had-u2-0k7">
-                                <rect key="frame" x="73" y="602" width="248" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="bq3-9l-eu8"/>
-                                    <constraint firstAttribute="width" constant="248" id="tok-m9-1Pa"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.1333333333" green="0.57254901960000004" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0034858230008457032" green="0.1274074185550676" blue="0.76175840736040612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Had-u2-0k7" secondAttribute="trailing" constant="38" id="8Sk-2S-gk3"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Had-u2-0k7" secondAttribute="bottom" constant="44" id="JWu-Vz-ZaP"/>
-                            <constraint firstItem="Pk3-Ul-G9r" firstAttribute="leading" secondItem="aJK-8s-HLj" secondAttribute="leadingMargin" constant="57" id="R8K-Nk-yU9"/>
+                            <constraint firstItem="kHP-i6-ywr" firstAttribute="top" secondItem="eYK-6c-kfo" secondAttribute="bottom" constant="87" id="630-aI-IO1"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kHP-i6-ywr" secondAttribute="bottom" constant="184" id="R1a-vC-foR"/>
+                            <constraint firstAttribute="trailing" secondItem="eYK-6c-kfo" secondAttribute="trailing" constant="209" id="V3e-UT-Ndh"/>
                             <constraint firstItem="kHP-i6-ywr" firstAttribute="leading" secondItem="aJK-8s-HLj" secondAttribute="leadingMargin" constant="66" id="V7M-nJ-vCP"/>
-                            <constraint firstItem="Had-u2-0k7" firstAttribute="top" secondItem="Pk3-Ul-G9r" secondAttribute="bottom" constant="69" id="V97-is-U5r"/>
-                            <constraint firstItem="Pk3-Ul-G9r" firstAttribute="top" secondItem="kHP-i6-ywr" secondAttribute="bottom" constant="20" id="Y1k-2K-54T"/>
-                            <constraint firstItem="Had-u2-0k7" firstAttribute="leading" secondItem="aJK-8s-HLj" secondAttribute="leadingMargin" constant="57" id="YwZ-ud-Vln"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kHP-i6-ywr" secondAttribute="trailing" constant="66" id="cXJ-IZ-dLN"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Pk3-Ul-G9r" secondAttribute="trailing" constant="75" id="ctK-A1-vzc"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Pk3-Ul-G9r" secondAttribute="bottom" constant="134" id="jXq-Nv-7E4"/>
-                            <constraint firstItem="Pk3-Ul-G9r" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="483" id="yts-dd-B0D"/>
+                            <constraint firstItem="eYK-6c-kfo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="146" id="ogX-Vb-Ubr"/>
+                            <constraint firstItem="eYK-6c-kfo" firstAttribute="leading" secondItem="aJK-8s-HLj" secondAttribute="leadingMargin" constant="40" id="xza-9Q-6Qf"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="disconnectButton" destination="Pk3-Ul-G9r" id="Kmf-UP-zCT"/>
                         <outlet property="signOutButton" destination="kHP-i6-ywr" id="ewS-D5-DEK"/>
-                        <outlet property="statusText" destination="Had-u2-0k7" id="CD3-x8-ebZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
