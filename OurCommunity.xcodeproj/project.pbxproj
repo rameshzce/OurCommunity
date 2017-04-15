@@ -18,7 +18,7 @@
 		75B946461E9F152500201ABA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B946451E9F152500201ABA /* Bolts.framework */; };
 		75B946481E9F153D00201ABA /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B946471E9F153D00201ABA /* FBSDKShareKit.framework */; };
 		75BAA3661E9FCCA900F82378 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAA3651E9FCCA900F82378 /* Helper.swift */; };
-		75FF493C1EA0EF3400BFFF9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75FF493B1EA0EF3400BFFF9F /* GoogleService-Info.plist */; };
+		75E1784C1EA16F120051F16C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75E1784B1EA16F120051F16C /* GoogleService-Info.plist */; };
 		DB305B55D1162CF075A8C94B /* Pods_OurCommunity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44BEF95C88EF1E3B762BC796 /* Pods_OurCommunity.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +39,7 @@
 		75B946451E9F152500201ABA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		75B946471E9F153D00201ABA /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		75BAA3651E9FCCA900F82378 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		75FF493B1EA0EF3400BFFF9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		75E1784B1EA16F120051F16C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		75FF493D1EA0EFBD00BFFF9F /* OurCommunity-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OurCommunity-Bridging-Header.h"; sourceTree = "<group>"; };
 		F4F800D3635E91481784309C /* Pods-OurCommunity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OurCommunity.release.xcconfig"; path = "Pods/Target Support Files/Pods-OurCommunity/Pods-OurCommunity.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,7 +98,7 @@
 				752A05631E9DC9E100962290 /* Assets.xcassets */,
 				752A05651E9DC9E100962290 /* LaunchScreen.storyboard */,
 				752A05681E9DC9E100962290 /* Info.plist */,
-				75FF493B1EA0EF3400BFFF9F /* GoogleService-Info.plist */,
+				75E1784B1EA16F120051F16C /* GoogleService-Info.plist */,
 				752A05601E9DC9E100962290 /* OurCommunity.xcdatamodeld */,
 				75FF493D1EA0EFBD00BFFF9F /* OurCommunity-Bridging-Header.h */,
 			);
@@ -195,7 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				752A05671E9DC9E100962290 /* LaunchScreen.storyboard in Resources */,
-				75FF493C1EA0EF3400BFFF9F /* GoogleService-Info.plist in Resources */,
+				75E1784C1EA16F120051F16C /* GoogleService-Info.plist in Resources */,
 				752A05641E9DC9E100962290 /* Assets.xcassets in Resources */,
 				752A055F1E9DC9E100962290 /* Main.storyboard in Resources */,
 			);

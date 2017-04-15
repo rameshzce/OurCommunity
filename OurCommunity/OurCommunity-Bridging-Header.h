@@ -6,4 +6,4 @@
 //  Copyright © 2017 tokkalo.com. All rights reserved.
 //
 
-#import <GoogleSignIn/GoogleSignIn.h>
+#import <Google/SignIn.h>
