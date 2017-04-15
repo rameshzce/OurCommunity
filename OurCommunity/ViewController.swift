@@ -18,13 +18,29 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
     @IBOutlet weak var disconnectButton: UIButton!
     @IBOutlet weak var statusText: UILabel!
     // [END viewcontroller_vars]
-    @IBOutlet var signInButton: GIDSignInButton!
+    @IBOutlet var signInButton: UIButton!
+    @IBAction func signInBtn(_ sender: Any) {
+        GIDSignIn.sharedInstance().signIn()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         GIDSignIn.sharedInstance().uiDelegate = self
+        
+        let btnSize : CGFloat = 100
+        signInButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        //signInButton.center = view.center
+        signInButton.setImage(UIImage(named: "google_logo.png"), for: UIControlState.normal)
+        signInButton.addTarget(self, action: #selector(signInBtn), for: UIControlEvents.touchUpInside)
+        
+        //Circular button
+        signInButton.layer.cornerRadius = btnSize/2
+        signInButton.layer.masksToBounds = true
+        signInButton.layer.borderColor = UIColor.black.cgColor
+        signInButton.layer.borderWidth = 2
+        view.addSubview(signInButton)
         
         // Uncomment to automatically sign in the user.
         //GIDSignIn.sharedInstance().signInSilently()
