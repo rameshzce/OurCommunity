@@ -54,23 +54,6 @@
                                     <action selector="didTapSignOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z8w-fB-4Sc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCH-cd-rjY">
-                                <rect key="frame" x="92" y="390" width="211" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="211" id="130-mu-LsV"/>
-                                    <constraint firstAttribute="width" constant="211" id="MsU-9I-Y9P"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="Xv3-tV-HYR"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="hf1-5N-vlr"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="211" id="pl5-4o-op6"/>
-                                    <constraint firstAttribute="height" constant="30" id="uRQ-uB-QSc"/>
-                                </constraints>
-                                <state key="normal" title="signin">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="signInBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KdQ-hn-Fa0"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Had-u2-0k7">
                                 <rect key="frame" x="73" y="602" width="248" height="21"/>
                                 <constraints>
@@ -84,27 +67,21 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1333333333" green="0.57254901960000004" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="kHP-i6-ywr" firstAttribute="top" secondItem="FCH-cd-rjY" secondAttribute="bottom" constant="33" id="0By-02-7Xh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Had-u2-0k7" secondAttribute="trailing" constant="38" id="8Sk-2S-gk3"/>
-                            <constraint firstItem="kHP-i6-ywr" firstAttribute="top" secondItem="FCH-cd-rjY" secondAttribute="bottom" constant="33" id="Cyk-Kb-3XM"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Had-u2-0k7" secondAttribute="bottom" constant="44" id="JWu-Vz-ZaP"/>
-                            <constraint firstItem="FCH-cd-rjY" firstAttribute="leading" secondItem="aJK-8s-HLj" secondAttribute="leadingMargin" constant="76" id="NkI-sd-bJB"/>
                             <constraint firstItem="Pk3-Ul-G9r" firstAttribute="leading" secondItem="aJK-8s-HLj" secondAttribute="leadingMargin" constant="57" id="R8K-Nk-yU9"/>
                             <constraint firstItem="kHP-i6-ywr" firstAttribute="leading" secondItem="aJK-8s-HLj" secondAttribute="leadingMargin" constant="66" id="V7M-nJ-vCP"/>
                             <constraint firstItem="Had-u2-0k7" firstAttribute="top" secondItem="Pk3-Ul-G9r" secondAttribute="bottom" constant="69" id="V97-is-U5r"/>
-                            <constraint firstItem="FCH-cd-rjY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="370" id="Xf3-8Z-roF"/>
                             <constraint firstItem="Pk3-Ul-G9r" firstAttribute="top" secondItem="kHP-i6-ywr" secondAttribute="bottom" constant="20" id="Y1k-2K-54T"/>
                             <constraint firstItem="Had-u2-0k7" firstAttribute="leading" secondItem="aJK-8s-HLj" secondAttribute="leadingMargin" constant="57" id="YwZ-ud-Vln"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kHP-i6-ywr" secondAttribute="trailing" constant="66" id="cXJ-IZ-dLN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pk3-Ul-G9r" secondAttribute="trailing" constant="75" id="ctK-A1-vzc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FCH-cd-rjY" secondAttribute="trailing" constant="56" id="fhX-Yg-b5D"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Pk3-Ul-G9r" secondAttribute="bottom" constant="134" id="jXq-Nv-7E4"/>
                             <constraint firstItem="Pk3-Ul-G9r" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="483" id="yts-dd-B0D"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="disconnectButton" destination="Pk3-Ul-G9r" id="Kmf-UP-zCT"/>
-                        <outlet property="signInButton" destination="FCH-cd-rjY" id="5Pb-cF-a3p"/>
                         <outlet property="signOutButton" destination="kHP-i6-ywr" id="ewS-D5-DEK"/>
                         <outlet property="statusText" destination="Had-u2-0k7" id="CD3-x8-ebZ"/>
                     </connections>
