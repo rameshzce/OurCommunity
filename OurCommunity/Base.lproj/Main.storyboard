@@ -81,14 +81,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pB4-J2-vhu" customClass="GIDSignInButton">
-                                <rect key="frame" x="44" y="20" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="9iq-GP-ehe"/>
-                                    <constraint firstAttribute="width" constant="240" id="Yn0-tX-Epd"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.1333333333" green="0.57254901960000004" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -97,7 +89,6 @@
                             <constraint firstItem="kHP-i6-ywr" firstAttribute="top" secondItem="FCH-cd-rjY" secondAttribute="bottom" constant="33" id="Cyk-Kb-3XM"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Had-u2-0k7" secondAttribute="bottom" constant="44" id="JWu-Vz-ZaP"/>
                             <constraint firstItem="FCH-cd-rjY" firstAttribute="leading" secondItem="aJK-8s-HLj" secondAttribute="leadingMargin" constant="76" id="NkI-sd-bJB"/>
-                            <constraint firstItem="FCH-cd-rjY" firstAttribute="top" secondItem="pB4-J2-vhu" secondAttribute="bottom" constant="242" id="Pny-ws-sfZ"/>
                             <constraint firstItem="Pk3-Ul-G9r" firstAttribute="leading" secondItem="aJK-8s-HLj" secondAttribute="leadingMargin" constant="57" id="R8K-Nk-yU9"/>
                             <constraint firstItem="kHP-i6-ywr" firstAttribute="leading" secondItem="aJK-8s-HLj" secondAttribute="leadingMargin" constant="66" id="V7M-nJ-vCP"/>
                             <constraint firstItem="Had-u2-0k7" firstAttribute="top" secondItem="Pk3-Ul-G9r" secondAttribute="bottom" constant="69" id="V97-is-U5r"/>
@@ -106,10 +97,7 @@
                             <constraint firstItem="Had-u2-0k7" firstAttribute="leading" secondItem="aJK-8s-HLj" secondAttribute="leadingMargin" constant="57" id="YwZ-ud-Vln"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kHP-i6-ywr" secondAttribute="trailing" constant="66" id="cXJ-IZ-dLN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pk3-Ul-G9r" secondAttribute="trailing" constant="75" id="ctK-A1-vzc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pB4-J2-vhu" secondAttribute="trailing" constant="75" id="fdC-tH-eTI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FCH-cd-rjY" secondAttribute="trailing" constant="56" id="fhX-Yg-b5D"/>
-                            <constraint firstItem="pB4-J2-vhu" firstAttribute="leading" secondItem="aJK-8s-HLj" secondAttribute="leadingMargin" constant="28" id="hBW-QZ-qqH"/>
-                            <constraint firstItem="pB4-J2-vhu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="iaM-ip-ehj"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Pk3-Ul-G9r" secondAttribute="bottom" constant="134" id="jXq-Nv-7E4"/>
                             <constraint firstItem="Pk3-Ul-G9r" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="483" id="yts-dd-B0D"/>
                         </constraints>

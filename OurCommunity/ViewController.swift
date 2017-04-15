@@ -36,7 +36,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
         signInButton.addTarget(self, action: #selector(signInBtn), for: UIControlEvents.touchUpInside)
         
         //Circular button
-        signInButton.layer.cornerRadius = btnSize/2
+        //signInButton.layer.cornerRadius = btnSize/2
         signInButton.layer.masksToBounds = true
         signInButton.layer.borderColor = UIColor.black.cgColor
         signInButton.layer.borderWidth = 2
