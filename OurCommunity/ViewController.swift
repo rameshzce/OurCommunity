@@ -15,11 +15,14 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
     // [START viewcontroller_vars]
     //@IBOutlet weak var signInButton: GIDSignInButton!
     @IBOutlet weak var signOutButton: UIButton!
-    // [END viewcontroller_vars]
-    @IBOutlet var signInButton: UIButton!
-    @IBAction func signInBtn(_ sender: Any) {
+
+    func signInBtn() {
         GIDSignIn.sharedInstance().signIn()
     }
+    
+    @IBOutlet var googleSignIn: UIView!
+    
+    @IBOutlet var btnGSignIn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,18 +49,9 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
             self.view.addSubview(loginButton)
         }
         
-        let btnSize : CGFloat = 100
-        signInButton = UIButton(frame: CGRect(x: 100, y: 100, width: 200, height: 50))
-        //signInButton.center = view.center
-        signInButton.setImage(UIImage(named: "google_signin_button.png"), for: UIControlState.normal)
-        signInButton.addTarget(self, action: #selector(signInBtn), for: UIControlEvents.touchUpInside)
+        //btnGSignIn.setImage(UIImage(named: "google_logo.png"), for: UIControlState.normal)
+        btnGSignIn.addTarget(self, action: #selector(signInBtn), for: UIControlEvents.touchUpInside)
         
-        //Circular button
-        //signInButton.layer.cornerRadius = btnSize/2
-        signInButton.layer.masksToBounds = true
-        signInButton.layer.borderColor = UIColor.black.cgColor
-        signInButton.layer.borderWidth = 2
-        view.addSubview(signInButton)
         
         // Uncomment to automatically sign in the user.
         //GIDSignIn.sharedInstance().signInSilently()
@@ -90,10 +84,10 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
     func toggleAuthUI() {
         if GIDSignIn.sharedInstance().hasAuthInKeychain() {
             // Signed in
-            signInButton.isHidden = true
+            btnGSignIn.isHidden = true
             signOutButton.isHidden = false
         } else {
-            signInButton.isHidden = false
+            btnGSignIn.isHidden = false
             signOutButton.isHidden = true
         }
     }

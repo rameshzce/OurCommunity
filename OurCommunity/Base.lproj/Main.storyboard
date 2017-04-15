@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,34 +22,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eYK-6c-kfo">
-                                <rect key="frame" x="16" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHP-i6-ywr">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                        <state key="normal" title="signout">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="didTapSignOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z8w-fB-4Sc"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ta-rg-TWX">
+                                <rect key="frame" x="67" y="585" width="240" height="40"/>
                                 <constraints>
-                                    <constraint firstItem="kHP-i6-ywr" firstAttribute="centerX" secondItem="eYK-6c-kfo" secondAttribute="centerX" id="jEL-TI-HKb"/>
-                                    <constraint firstItem="kHP-i6-ywr" firstAttribute="centerY" secondItem="eYK-6c-kfo" secondAttribute="centerY" id="lo2-k7-Y0o"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="240" id="58X-Dy-YtV"/>
+                                    <constraint firstAttribute="width" constant="240" id="G5s-53-AaI"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="Hzb-wp-Z0t"/>
+                                    <constraint firstAttribute="height" constant="40" id="IVO-3Q-Gtf"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="TBk-fJ-E7g"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="fGV-p6-21s"/>
                                 </constraints>
-                            </stackView>
+                                <state key="normal" title="Sign In with Google">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHP-i6-ywr">
+                                <rect key="frame" x="67" y="557" width="240" height="40"/>
+                                <state key="normal" title="signout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapSignOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z8w-fB-4Sc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0034858230008457032" green="0.1274074185550676" blue="0.76175840736040612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="eYK-6c-kfo" firstAttribute="width" secondItem="aJK-8s-HLj" secondAttribute="width" id="VHH-Q0-3VT"/>
-                            <constraint firstItem="eYK-6c-kfo" firstAttribute="centerX" secondItem="aJK-8s-HLj" secondAttribute="centerX" id="ij9-H5-bFl"/>
-                            <constraint firstItem="eYK-6c-kfo" firstAttribute="height" secondItem="aJK-8s-HLj" secondAttribute="height" id="pZG-ae-BZ2"/>
-                            <constraint firstItem="eYK-6c-kfo" firstAttribute="centerY" secondItem="aJK-8s-HLj" secondAttribute="centerY" constant="50" id="r3I-dH-E3W"/>
+                            <constraint firstItem="7Ta-rg-TWX" firstAttribute="top" secondItem="kHP-i6-ywr" secondAttribute="bottom" constant="-12" id="2zC-Jf-M02"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7Ta-rg-TWX" secondAttribute="trailing" constant="52" id="NCP-Sw-2o9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7Ta-rg-TWX" secondAttribute="bottom" constant="42" id="Qby-Kk-83D"/>
+                            <constraint firstItem="7Ta-rg-TWX" firstAttribute="leading" secondItem="aJK-8s-HLj" secondAttribute="leadingMargin" constant="51" id="Th4-td-GFk"/>
+                            <constraint firstItem="kHP-i6-ywr" firstAttribute="height" secondItem="7Ta-rg-TWX" secondAttribute="height" id="fot-Sn-kWS"/>
+                            <constraint firstItem="kHP-i6-ywr" firstAttribute="width" secondItem="7Ta-rg-TWX" secondAttribute="width" id="gy1-L0-yuo"/>
+                            <constraint firstItem="kHP-i6-ywr" firstAttribute="centerX" secondItem="7Ta-rg-TWX" secondAttribute="centerX" id="uCg-gF-2pI"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnGSignIn" destination="7Ta-rg-TWX" id="NHv-ox-0V0"/>
                         <outlet property="signOutButton" destination="kHP-i6-ywr" id="ewS-D5-DEK"/>
                     </connections>
                 </viewController>
