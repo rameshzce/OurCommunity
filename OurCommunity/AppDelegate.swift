@@ -73,9 +73,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             if user.profile.hasImage
             {
                 let pic = user.profile.imageURL(withDimension: 100)
-                print(pic)
-                UserDefaults.standard.set(pic, forKey: "profilePic")
+                var pic2: String
+                pic2 = (pic?.absoluteString)!
+                UserDefaults.standard.set(pic2, forKey: "profilePic")
                 UserDefaults.standard.synchronize()
+                //print(pic!)
             }
             
             NotificationCenter.default.post(

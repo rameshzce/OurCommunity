@@ -85,7 +85,7 @@ class UserViewController: UIViewController {
         alert.customSubview = subview
         
         _ = alert.addButton("Create", backgroundColor: color2, target:self, selector:#selector(self.checkAndCreateCommunity))
-        _ = alert.showCustom("ONC", subTitle: "Are you sure to delete?", color: color, icon: icon!, closeButtonTitle:"No")
+        _ = alert.showCustom("Our Community", subTitle: "Are you sure to delete?", color: color, icon: icon!, closeButtonTitle:"No")
 
     }
     
@@ -107,7 +107,8 @@ class UserViewController: UIViewController {
         self.userImage.layer.borderWidth = 5.0
         self.userImage.layer.borderColor = Helper.hexStringToUIColor("#C4C4C4").cgColor
         
-        Helper.loadImageFromUrl(profilePicture, userImage)
+        //Helper.loadImageFromUrl(profilePicture, userImage)
+        Helper.loadImageFromUrl(UserDefaults.standard.object(forKey: "profilePic") as! String, userImage)
 
         // Do any additional setup after loading the view.
     }
