@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Our New Community-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OurCommunity" customModuleProvider="target" sceneMemberID="viewController">
@@ -96,7 +96,7 @@
                             <constraint firstItem="P5w-Gr-Lyq" firstAttribute="width" secondItem="aJK-8s-HLj" secondAttribute="width" id="ztT-K0-tlP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="tyb-07-rda"/>
+                    <navigationItem key="navigationItem" title="Our New Community" id="tyb-07-rda"/>
                     <connections>
                         <outlet property="btnFBSignIn" destination="l1H-oa-QLx" id="gQT-uz-Fxy"/>
                         <outlet property="btnGSignIn" destination="7Ta-rg-TWX" id="NHv-ox-0V0"/>
@@ -193,7 +193,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UPm-C0-hHq" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="szG-OC-XdL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="szG-OC-XdL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

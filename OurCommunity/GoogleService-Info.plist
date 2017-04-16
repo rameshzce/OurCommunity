@@ -24,5 +24,7 @@
 	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:313047384727:ios:06a894c5a1a67c50</string>
+    <key>FIREBASE_ANALYTICS_COLLECTION_ENABLED</key>
+    <false/>
 </dict>
 </plist>
