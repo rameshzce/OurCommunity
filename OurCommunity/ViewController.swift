@@ -143,7 +143,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
                 if let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,name, picture.type(large)"]) {
                     
                     graphRequest.start(completionHandler: { (connection, result, error) in
-                        
+                        print(result!)
                         if error != nil {
                             print("error")
                             print(error?.localizedDescription)
@@ -151,18 +151,29 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
                         } else {
                             
                             if let userDetails = result as? [String: String] {
+                                print(userDetails)
                                 
-                                print(userDetails["email"]!)
+                                print("Email\n\n\n\n")
+                                print(userDetails["name"]!)
                                 /*print(userDetails["name"]!)
                                 print(userDetails["picture"]!)
                                 print(userDetails["first_name"]!)
                                 print(userDetails["last_name"]!)*/
                                 UserDefaults.standard.set(userDetails["email"]!, forKey: "userEmail")
+                                UserDefaults.standard.set(userDetails["name"]!, forKey: "userName")
                                 
+                            }else{
+                                print("tokka")
                             }
                             
                             let pic2: String = ((((result as AnyObject).object(forKey: "picture") as AnyObject).object(forKey: "data") as AnyObject).object(forKey: "url") as? String)!
-                            print(pic2)
+                            //print(pic2)
+                            
+                            let name: String = ((result as AnyObject).object(forKey: "name") as? String)!
+                            let email: String = ((result as AnyObject).object(forKey: "email") as? String)!
+                            
+                            UserDefaults.standard.set(email, forKey: "userEmail")
+                            UserDefaults.standard.set(name, forKey: "userName")
                             
                             UserDefaults.standard.set(pic2, forKey: "profilePic")
                             

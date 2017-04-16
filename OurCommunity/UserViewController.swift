@@ -13,11 +13,12 @@ import FBSDKLoginKit
 class UserViewController: UIViewController {
     @IBOutlet var userImage: UIImageView!
     
+    @IBOutlet var userGreeting: UILabel!
     
     var textfield1: UITextField!
     var textfield2: UITextView!
     
-    let profilePicture = "https://lh5.googleusercontent.com/-LVhc7szsUq0/AAAAAAAAAAI/AAAAAAAAAAA/AMcAYi8Q6nEL0D0DHI03VOozdcxdQhZkcQ/s100/photo.jpg"
+
     
     
     
@@ -118,6 +119,8 @@ class UserViewController: UIViewController {
         
         //Helper.loadImageFromUrl(profilePicture, userImage)
         Helper.loadImageFromUrl(UserDefaults.standard.object(forKey: "profilePic") as! String, userImage)
+        
+        self.userGreeting.text = "Welcome \(String(describing: UserDefaults.standard.object(forKey: "userName")!))"
 
         // Do any additional setup after loading the view.
     }

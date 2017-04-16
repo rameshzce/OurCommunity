@@ -69,6 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             _ = user.profile.email
             // [START_EXCLUDE]
             UserDefaults.standard.set(user.profile.email, forKey: "userEmail")
+            UserDefaults.standard.set(fullName, forKey: "userName")
             print("Userid: \(String(describing: fullName!))")
             if user.profile.hasImage
             {
