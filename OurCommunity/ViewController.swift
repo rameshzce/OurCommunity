@@ -127,17 +127,17 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
             
         }
         else {
-            
+            print(result)
             
             if result.grantedPermissions.contains("email")
             {
                 
-                if let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,name"]) {
+                if let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,name, picture.type(large)"]) {
                     
                     graphRequest.start(completionHandler: { (connection, result, error) in
                         
                         if error != nil {
-                            
+                            print("error")
                             print(error?.localizedDescription)
                             
                         } else {
@@ -145,8 +145,20 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
                             if let userDetails = result as? [String: String] {
                                 
                                 print(userDetails["email"]!)
+                                /*print(userDetails["name"]!)
+                                print(userDetails["picture"]!)
+                                print(userDetails["first_name"]!)
+                                print(userDetails["last_name"]!)*/
                                 
                             }
+                            
+                            let pic2: String = ((((result as AnyObject).object(forKey: "picture") as AnyObject).object(forKey: "data") as AnyObject).object(forKey: "url") as? String)!
+                            print(pic2)
+                            
+                            UserDefaults.standard.set(pic2, forKey: "profilePic")
+                            UserDefaults.standard.synchronize()
+                            
+                            self.performSegue(withIdentifier: "userSegue", sender: nil)
                             
                         }
                         
