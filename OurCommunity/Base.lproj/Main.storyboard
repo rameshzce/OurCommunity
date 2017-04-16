@@ -139,14 +139,43 @@
                                     <action selector="btnSignOut:" destination="djh-9B-gbi" eventType="touchUpInside" id="3np-nQ-JIg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1t-Dm-KQu">
+                                <rect key="frame" x="102" y="308.5" width="170" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="SAt-Nq-Y7g"/>
+                                    <constraint firstAttribute="height" constant="50" id="iNX-yS-pAB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="My Communities">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zV0-kt-V4e">
+                                <rect key="frame" x="62" y="366" width="250" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="LlG-aE-07i"/>
+                                    <constraint firstAttribute="height" constant="50" id="MH1-xL-oGr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Create new community">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createCommunity:" destination="djh-9B-gbi" eventType="touchUpInside" id="UjB-8i-ZKE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0034858230009999999" green="0.12740741859999999" blue="0.7617584074" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="zV0-kt-V4e" firstAttribute="centerX" secondItem="Y1t-Dm-KQu" secondAttribute="centerX" id="34g-Es-a3C"/>
                             <constraint firstItem="OXe-ib-p9o" firstAttribute="top" secondItem="o7H-dX-JeG" secondAttribute="bottom" constant="54" id="3Su-Vx-6JM"/>
                             <constraint firstItem="tNK-sp-Twg" firstAttribute="top" secondItem="ouC-Zm-ksd" secondAttribute="bottom" constant="20" id="FO9-qo-vOu"/>
                             <constraint firstItem="ouC-Zm-ksd" firstAttribute="centerX" secondItem="oZu-Rm-TxX" secondAttribute="centerX" id="GfG-HW-rq7"/>
                             <constraint firstItem="OXe-ib-p9o" firstAttribute="centerX" secondItem="oZu-Rm-TxX" secondAttribute="centerX" id="ONt-ux-Eio"/>
+                            <constraint firstItem="Y1t-Dm-KQu" firstAttribute="centerX" secondItem="oZu-Rm-TxX" secondAttribute="centerX" id="P2m-3V-pic"/>
+                            <constraint firstItem="Y1t-Dm-KQu" firstAttribute="centerY" secondItem="oZu-Rm-TxX" secondAttribute="centerY" id="f12-ei-XQi"/>
                             <constraint firstItem="tNK-sp-Twg" firstAttribute="top" secondItem="ouC-Zm-ksd" secondAttribute="bottom" constant="20" id="f5X-p9-LOP"/>
+                            <constraint firstItem="zV0-kt-V4e" firstAttribute="top" secondItem="Y1t-Dm-KQu" secondAttribute="bottom" constant="7.5" id="fQJ-LO-XOI"/>
                         </constraints>
                     </view>
                     <connections>
@@ -156,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CSH-r0-7g6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="740" y="37.331334332833585"/>
+            <point key="canvasLocation" x="762" y="38"/>
         </scene>
     </scenes>
     <resources>

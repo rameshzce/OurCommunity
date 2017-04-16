@@ -70,6 +70,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             _ = user.profile.email
             // [START_EXCLUDE]
             print("Userid: \(String(describing: fullName!))")
+            if user.profile.hasImage
+            {
+                let pic = user.profile.imageURL(withDimension: 100)
+                print(pic)
+                UserDefaults.standard.set(pic, forKey: "profilePic")
+                UserDefaults.standard.synchronize()
+            }
+            
             NotificationCenter.default.post(
                 name: Notification.Name(rawValue: "ToggleAuthUINotification"),
                 object: nil,

@@ -94,7 +94,7 @@ class Helper{
         )
     }
     
-    static func loadImageFromUrl(_ url: String, view: UIImageView){
+    static func loadImageFromUrl(_ url: String, _ view: UIImageView){
         
         // Create Url from string
         let url = URL(string: url)!
