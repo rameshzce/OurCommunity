@@ -41,6 +41,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
         {
             
             print("User Logged In")
+            self.performSegue(withIdentifier: "userSegue", sender: nil)
             
         }
         else
