@@ -28,6 +28,13 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
         super.viewDidLoad()
         
         
+        if  let user = UserDefaults.standard.object(forKey: "userEmail") as?  String  {
+            print("User : \(user)")
+            self.performSegue(withIdentifier: "userSegue", sender: nil)
+        }
+
+        
+        
         GIDSignIn.sharedInstance().uiDelegate = self
         
         if (FBSDKAccessToken.current() != nil)
@@ -149,6 +156,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
                                 print(userDetails["picture"]!)
                                 print(userDetails["first_name"]!)
                                 print(userDetails["last_name"]!)*/
+                                UserDefaults.standard.set(userDetails["email"]!, forKey: "userEmail")
                                 
                             }
                             
@@ -156,6 +164,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
                             print(pic2)
                             
                             UserDefaults.standard.set(pic2, forKey: "profilePic")
+                            
                             UserDefaults.standard.synchronize()
                             
                             self.performSegue(withIdentifier: "userSegue", sender: nil)
@@ -172,6 +181,10 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
                 
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {

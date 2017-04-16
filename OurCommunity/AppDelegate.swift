@@ -69,6 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             _ = user.profile.familyName
             _ = user.profile.email
             // [START_EXCLUDE]
+            UserDefaults.standard.set(user.profile.email, forKey: "userEmail")
             print("Userid: \(String(describing: fullName!))")
             if user.profile.hasImage
             {
@@ -76,9 +77,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 var pic2: String
                 pic2 = (pic?.absoluteString)!
                 UserDefaults.standard.set(pic2, forKey: "profilePic")
-                UserDefaults.standard.synchronize()
+                
+                
                 //print(pic!)
             }
+            UserDefaults.standard.synchronize()
             
             NotificationCenter.default.post(
                 name: Notification.Name(rawValue: "ToggleAuthUINotification"),

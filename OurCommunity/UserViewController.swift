@@ -8,6 +8,7 @@
 
 import UIKit
 import SCLAlertView
+import FBSDKLoginKit
 
 class UserViewController: UIViewController {
     @IBOutlet var userImage: UIImageView!
@@ -94,8 +95,16 @@ class UserViewController: UIViewController {
     }
 
     @IBAction func btnSignOut(_ sender: Any) {
-        //GIDSignIn.sharedInstance().signOut()
-        //self.performSegue(withIdentifier: "signOut", sender: nil)
+        if  (UserDefaults.standard.object(forKey: "userEmail") as?  String) != nil  {
+            UserDefaults.standard.set(nil, forKey: "userEmail")
+            UserDefaults.standard.synchronize()
+        }
+        
+        GIDSignIn.sharedInstance().signOut()
+        
+        FBSDKLoginManager().logOut()
+
+        self.performSegue(withIdentifier: "signOut", sender: nil)
         
     }
     override func viewDidLoad() {
