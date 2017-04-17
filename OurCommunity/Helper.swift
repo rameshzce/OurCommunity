@@ -124,7 +124,7 @@ class Helper{
         let request = NSMutableURLRequest(url: url as URL)
         request.httpMethod = "POST"
         
-        let paramString = "data=test"
+        let paramString = "data=rams"
         request.httpBody = paramString.data(using: String.Encoding.utf8)
         
         let task = session.dataTask(with: request as URLRequest) {
@@ -139,10 +139,23 @@ class Helper{
             if let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
             {
                 print(dataString)
+                let result = convertToDictionary(dataString as String)
+                print(result)
             }
         }
         
         task.resume()
         
+    }
+    
+    static func convertToDictionary(_ text: String) -> [String: Any]? {
+        if let data = text.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
     }
 }
