@@ -77,17 +77,17 @@ class UserViewController: UIViewController {
         
         // Add textfield 1
         textfield1 = UITextField(frame: CGRect(x: x,y: 10,width: 180,height: 25))
-        textfield1.layer.borderColor = UIColor.green.cgColor
+        textfield1.layer.borderColor = UIColor.lightGray.cgColor
         textfield1.layer.borderWidth = 1.5
         textfield1.layer.cornerRadius = 5
-        textfield1.placeholder = "Username"
+        textfield1.placeholder = "Comunityname"
         textfield1.textAlignment = NSTextAlignment.center
         subview.addSubview(textfield1)
         
         alert.customSubview = subview
         
         _ = alert.addButton("Create", backgroundColor: color2, target:self, selector:#selector(self.checkAndCreateCommunity))
-        _ = alert.showCustom("Our Community", subTitle: "Are you sure to delete?", color: color, icon: icon!, closeButtonTitle:"No")
+        _ = alert.showCustom("Our New Community", subTitle: "Are you sure to delete?", color: color, icon: icon!, closeButtonTitle:"Cancel")
 
     }
     
