@@ -35,7 +35,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1H-oa-QLx" customClass="FBSDKLoginButton">
-                                        <rect key="frame" x="68" y="276.5" width="240" height="34"/>
+                                        <rect key="frame" x="68" y="264.5" width="240" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="7lP-lF-eNL"/>
                                         </constraints>
@@ -43,18 +43,17 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ta-rg-TWX">
-                                        <rect key="frame" x="68" y="237.5" width="240" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ta-rg-TWX">
+                                        <rect key="frame" x="68" y="210.5" width="240" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="G5s-53-AaI"/>
-                                            <constraint firstAttribute="height" constant="40" id="IVO-3Q-Gtf"/>
                                         </constraints>
                                         <state key="normal" title="Sign in with Google">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHP-i6-ywr">
-                                        <rect key="frame" x="163" y="209.5" width="51" height="30"/>
+                                        <rect key="frame" x="163" y="182.5" width="51" height="30"/>
                                         <state key="normal" title="signout">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -65,13 +64,15 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="7Ta-rg-TWX" firstAttribute="centerX" secondItem="l1H-oa-QLx" secondAttribute="centerX" id="5Cb-du-2AC"/>
-                                    <constraint firstItem="l1H-oa-QLx" firstAttribute="top" secondItem="7Ta-rg-TWX" secondAttribute="bottom" constant="-1" id="9gz-Oh-3Wf"/>
+                                    <constraint firstItem="l1H-oa-QLx" firstAttribute="top" secondItem="7Ta-rg-TWX" secondAttribute="bottom" constant="20" id="9gz-Oh-3Wf"/>
                                     <constraint firstAttribute="trailing" secondItem="fkl-rP-pWT" secondAttribute="trailing" constant="62" id="OXQ-Rm-qDD"/>
                                     <constraint firstAttribute="bottom" secondItem="fkl-rP-pWT" secondAttribute="bottom" constant="318" id="RxO-dG-KjN"/>
                                     <constraint firstItem="fkl-rP-pWT" firstAttribute="centerX" secondItem="P5w-Gr-Lyq" secondAttribute="centerX" id="Vw6-CM-2fT"/>
                                     <constraint firstItem="kHP-i6-ywr" firstAttribute="centerX" secondItem="7Ta-rg-TWX" secondAttribute="centerX" id="g4K-qq-Lhg"/>
                                     <constraint firstItem="7Ta-rg-TWX" firstAttribute="top" secondItem="kHP-i6-ywr" secondAttribute="bottom" constant="-2" id="qRy-C5-AQb"/>
-                                    <constraint firstItem="fkl-rP-pWT" firstAttribute="top" secondItem="l1H-oa-QLx" secondAttribute="bottom" constant="8" id="qqJ-4g-J87"/>
+                                    <constraint firstItem="fkl-rP-pWT" firstAttribute="top" secondItem="l1H-oa-QLx" secondAttribute="bottom" constant="20" id="qqJ-4g-J87"/>
+                                    <constraint firstItem="7Ta-rg-TWX" firstAttribute="width" secondItem="l1H-oa-QLx" secondAttribute="width" id="sQL-Hn-wz8"/>
+                                    <constraint firstItem="7Ta-rg-TWX" firstAttribute="height" secondItem="l1H-oa-QLx" secondAttribute="height" id="uEb-g5-zou"/>
                                     <constraint firstItem="l1H-oa-QLx" firstAttribute="centerX" secondItem="fkl-rP-pWT" secondAttribute="centerX" id="w6N-s2-1aa"/>
                                     <constraint firstItem="fkl-rP-pWT" firstAttribute="centerY" secondItem="P5w-Gr-Lyq" secondAttribute="centerY" id="wlX-na-pX0"/>
                                 </constraints>
@@ -199,7 +200,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UPm-C0-hHq" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="szG-OC-XdL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="szG-OC-XdL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

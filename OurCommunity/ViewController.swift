@@ -57,8 +57,10 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
             //self.view.addSubview(loginButton)
         }
         
-        //btnGSignIn.setImage(UIImage(named: "google_logo.png"), for: UIControlState.normal)
+        btnGSignIn.setImage(UIImage(named: "google_signin_btn1.png"), for: UIControlState.normal)
         btnGSignIn.addTarget(self, action: #selector(signInBtn), for: UIControlEvents.touchUpInside)
+        btnGSignIn.layer.cornerRadius = 2
+        btnGSignIn.clipsToBounds = true
         
         
         // Uncomment to automatically sign in the user.
