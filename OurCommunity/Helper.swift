@@ -151,7 +151,8 @@ class Helper{
     static func convertToDictionary(_ text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {
             do {
-                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                //return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                  return  try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String : Any]
             } catch {
                 print(error.localizedDescription)
             }

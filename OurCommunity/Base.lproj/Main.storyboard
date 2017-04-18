@@ -30,7 +30,7 @@
                                             <constraint firstAttribute="height" constant="30" id="5jh-Cf-sXs"/>
                                             <constraint firstAttribute="width" constant="250" id="FgP-4J-2WG"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -61,16 +61,35 @@
                                             <action selector="didTapSignOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z8w-fB-4Sc"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="x3Y-SZ-xkv">
+                                        <rect key="frame" x="138" y="70.5" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="2GS-AR-pwD"/>
+                                            <constraint firstAttribute="height" constant="100" id="83P-h6-QgJ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Community" translatesAutoresizingMaskIntoConstraints="NO" id="lw7-fc-1Om">
+                                        <rect key="frame" x="8" y="448.5" width="359" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="ue5-BM-sSU"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="7Ta-rg-TWX" firstAttribute="centerX" secondItem="l1H-oa-QLx" secondAttribute="centerX" id="5Cb-du-2AC"/>
                                     <constraint firstItem="l1H-oa-QLx" firstAttribute="top" secondItem="7Ta-rg-TWX" secondAttribute="bottom" constant="20" id="9gz-Oh-3Wf"/>
+                                    <constraint firstItem="lw7-fc-1Om" firstAttribute="leading" secondItem="P5w-Gr-Lyq" secondAttribute="leading" constant="8" id="EkM-Bt-fnu"/>
                                     <constraint firstAttribute="trailing" secondItem="fkl-rP-pWT" secondAttribute="trailing" constant="62" id="OXQ-Rm-qDD"/>
                                     <constraint firstAttribute="bottom" secondItem="fkl-rP-pWT" secondAttribute="bottom" constant="318" id="RxO-dG-KjN"/>
+                                    <constraint firstItem="x3Y-SZ-xkv" firstAttribute="centerX" secondItem="7Ta-rg-TWX" secondAttribute="centerX" id="Uzk-Fb-RHv"/>
                                     <constraint firstItem="fkl-rP-pWT" firstAttribute="centerX" secondItem="P5w-Gr-Lyq" secondAttribute="centerX" id="Vw6-CM-2fT"/>
+                                    <constraint firstItem="lw7-fc-1Om" firstAttribute="centerX" secondItem="l1H-oa-QLx" secondAttribute="centerX" id="YJk-Z1-ve9"/>
+                                    <constraint firstItem="7Ta-rg-TWX" firstAttribute="top" secondItem="x3Y-SZ-xkv" secondAttribute="bottom" constant="40" id="eLo-oN-zod"/>
                                     <constraint firstItem="kHP-i6-ywr" firstAttribute="centerX" secondItem="7Ta-rg-TWX" secondAttribute="centerX" id="g4K-qq-Lhg"/>
+                                    <constraint firstAttribute="trailing" secondItem="lw7-fc-1Om" secondAttribute="trailing" constant="8" id="k2x-vB-My5"/>
                                     <constraint firstItem="7Ta-rg-TWX" firstAttribute="top" secondItem="kHP-i6-ywr" secondAttribute="bottom" constant="-2" id="qRy-C5-AQb"/>
                                     <constraint firstItem="fkl-rP-pWT" firstAttribute="top" secondItem="l1H-oa-QLx" secondAttribute="bottom" constant="20" id="qqJ-4g-J87"/>
+                                    <constraint firstItem="lw7-fc-1Om" firstAttribute="top" secondItem="fkl-rP-pWT" secondAttribute="bottom" constant="100" id="rsl-4n-J9V"/>
                                     <constraint firstItem="7Ta-rg-TWX" firstAttribute="width" secondItem="l1H-oa-QLx" secondAttribute="width" id="sQL-Hn-wz8"/>
                                     <constraint firstItem="7Ta-rg-TWX" firstAttribute="height" secondItem="l1H-oa-QLx" secondAttribute="height" id="uEb-g5-zou"/>
                                     <constraint firstItem="l1H-oa-QLx" firstAttribute="centerX" secondItem="fkl-rP-pWT" secondAttribute="centerX" id="w6N-s2-1aa"/>
@@ -215,6 +234,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Community" width="960" height="480"/>
+        <image name="logo" width="192" height="192"/>
         <image name="user_icon" width="512" height="512"/>
     </resources>
 </document>
