@@ -19,6 +19,7 @@
 		75B946461E9F152500201ABA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B946451E9F152500201ABA /* Bolts.framework */; };
 		75B946481E9F153D00201ABA /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B946471E9F153D00201ABA /* FBSDKShareKit.framework */; };
 		75BAA3661E9FCCA900F82378 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BAA3651E9FCCA900F82378 /* Helper.swift */; };
+		75C1AFCB1EA6606500EB1AE9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C1AFCA1EA6606500EB1AE9 /* MapKit.framework */; };
 		75E1784C1EA16F120051F16C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75E1784B1EA16F120051F16C /* GoogleService-Info.plist */; };
 		DB305B55D1162CF075A8C94B /* Pods_OurCommunity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44BEF95C88EF1E3B762BC796 /* Pods_OurCommunity.framework */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,7 @@
 		75B946451E9F152500201ABA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		75B946471E9F153D00201ABA /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		75BAA3651E9FCCA900F82378 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		75C1AFCA1EA6606500EB1AE9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		75E1784B1EA16F120051F16C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		75FF493D1EA0EFBD00BFFF9F /* OurCommunity-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OurCommunity-Bridging-Header.h"; sourceTree = "<group>"; };
 		F4F800D3635E91481784309C /* Pods-OurCommunity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OurCommunity.release.xcconfig"; path = "Pods/Target Support Files/Pods-OurCommunity/Pods-OurCommunity.release.xcconfig"; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 				75B946461E9F152500201ABA /* Bolts.framework in Frameworks */,
 				75B946441E9F14FF00201ABA /* FBSDKLoginKit.framework in Frameworks */,
 				75B946421E9F14F400201ABA /* FBSDKCoreKit.framework in Frameworks */,
+				75C1AFCB1EA6606500EB1AE9 /* MapKit.framework in Frameworks */,
 				DB305B55D1162CF075A8C94B /* Pods_OurCommunity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +68,7 @@
 		29BB08CCFE26CB2D0C488729 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				75C1AFCA1EA6606500EB1AE9 /* MapKit.framework */,
 				44BEF95C88EF1E3B762BC796 /* Pods_OurCommunity.framework */,
 			);
 			name = Frameworks;
@@ -167,7 +171,16 @@
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -310,7 +323,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development IOS Push Services: com.tokkalo.OurCommunity";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -329,7 +343,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -359,7 +373,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ramesh Kolamala (CD7MJQYH5P)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -372,7 +386,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -387,7 +401,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OurCommunity/OurCommunity.entitlements;
-				DEVELOPMENT_TEAM = CD7MJQYH5P;
+				"CODE_SIGN_IDENTITY[sdk=*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -397,6 +413,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tokkalo.OurCommunity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "OurCommunity/OurCommunity-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -410,7 +427,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OurCommunity/OurCommunity.entitlements;
-				DEVELOPMENT_TEAM = CD7MJQYH5P;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -420,6 +438,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tokkalo.OurCommunity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "OurCommunity/OurCommunity-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
