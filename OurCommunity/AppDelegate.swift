@@ -11,6 +11,7 @@ import CoreData
 import FBSDKLoginKit
 import Google
 import GoogleSignIn
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -206,8 +207,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     }
     
     func registerForPushNotifications(application: UIApplication) {
-        let notificationSettings = UIUserNotificationSettings(
-            forTypes: [.Badge, .Sound, .Alert], categories: nil)
+        let notificationSettings = UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil)
         application.registerUserNotificationSettings(notificationSettings)
     }
 
