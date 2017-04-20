@@ -14,7 +14,7 @@ import GoogleSignIn
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
@@ -31,9 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Initialize sign-in
         var configureError: NSError?
         GGLContext.sharedInstance().configureWithError(&configureError)
-        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        assert(configureError == nil, "Error configuring Google services: \(String(describing: configureError))")
         
-        GIDSignIn.sharedInstance().delegate = self
+        //GIDSignIn.sharedInstance().delegate = self
         
         //registerForPushNotifications(application: application)
         
@@ -55,63 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     // [END openurl]
 
     
-    // [START signin_handler]
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
-              withError error: Error!) {
-        
-        
-        if let error = error {
-            print("error: \(error.localizedDescription)")
-            // [START_EXCLUDE silent]
-            NotificationCenter.default.post(
-                name: Notification.Name(rawValue: "ToggleAuthUINotification"), object: nil, userInfo: nil)
-            // [END_EXCLUDE]
-        } else {
-            // Perform any operations on signed in user here.
-            _ = user.userID                  // For client-side use only!
-            
-            _ = user.authentication.idToken // Safe to send to the server
-            let fullName = user.profile.name
-            _ = user.profile.givenName
-            _ = user.profile.familyName
-            _ = user.profile.email
-            // [START_EXCLUDE]
-            UserDefaults.standard.set(user.profile.email, forKey: "userEmail")
-            UserDefaults.standard.set(fullName, forKey: "userName")
-            print("Userid: \(String(describing: fullName!))")
-            if user.profile.hasImage
-            {
-                let pic = user.profile.imageURL(withDimension: 100)
-                var pic2: String
-                pic2 = (pic?.absoluteString)!
-                UserDefaults.standard.set(pic2, forKey: "profilePic")
-                
-                
-                //print(pic!)
-            }
-            UserDefaults.standard.synchronize()
-            
-            NotificationCenter.default.post(
-                name: Notification.Name(rawValue: "ToggleAuthUINotification"),
-                object: nil,
-                userInfo: ["statusText": "Signed:\(String(describing: fullName!))"])
-            // [END_EXCLUDE]
-            self.window?.rootViewController?.performSegue(withIdentifier: "userSegue", sender: nil)
-        }
-    }
-    // [END signin_handler]
-    // [START disconnect_handler]
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
-              withError error: Error!) {
-        // Perform any operations when the user disconnects from app here.
-        // [START_EXCLUDE]
-        NotificationCenter.default.post(
-            name: Notification.Name(rawValue: "ToggleAuthUINotification"),
-            object: nil,
-            userInfo: ["statusText": "User has disconnected."])
-        // [END_EXCLUDE]
-    }
-    // [END disconnect_handler]
+    
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
         let sourceApplication =  options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String
