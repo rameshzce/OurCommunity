@@ -15,6 +15,8 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
     // [START viewcontroller_vars]
     //@IBOutlet weak var signInButton: GIDSignInButton!
     @IBOutlet weak var signOutButton: UIButton!
+    
+    let apiUrl = "http://www.tokkalo.com/api/oc/create_user.php"
 
     func signInBtn() {
         GIDSignIn.sharedInstance().signIn()
@@ -26,7 +28,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Helper.data_request("http://www.tokkalo.com/api/oc/community.php")
+        //Helper.data_request("http://www.tokkalo.com/api/oc/community.php")
         
         if  let user = UserDefaults.standard.object(forKey: "userEmail") as?  String  {
             print("User : \(user)")
@@ -181,6 +183,12 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
                             
                             UserDefaults.standard.synchronize()
                             
+                            if let token = UserDefaults.standard.object(forKey: "deviceToken") as? String{
+                                self.registerUpdateUser(token, email, name)
+                            }
+                            
+                            
+                            
                             self.performSegue(withIdentifier: "userSegue", sender: nil)
                             
                         }
@@ -195,6 +203,37 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
                 
             }
         }
+    }
+    
+    func registerUpdateUser(_ token: String, _ email: String, _ name: String){
+        let url:NSURL = NSURL(string: self.apiUrl)!
+        let session = URLSession.shared
+        
+        let request = NSMutableURLRequest(url: url as URL)
+        request.httpMethod = "POST"
+        
+        let paramString = "os_type=iOS&token=" + token + "&email=" + email + "&name=" + name
+        request.httpBody = paramString.data(using: String.Encoding.utf8)
+        
+        let task = session.dataTask(with: request as URLRequest) {
+            (
+            data, response, error) in
+            
+            guard let _:NSData = data as NSData?, let _:URLResponse = response, error == nil else {
+                print("error")
+                return
+            }
+            
+            if let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+            {
+                print(dataString)
+                let result = Helper.convertToDictionary(dataString as String)
+                print(result)
+            }
+        }
+        
+        task.resume()
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {

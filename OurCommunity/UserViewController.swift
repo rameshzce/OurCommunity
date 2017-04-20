@@ -122,9 +122,7 @@ class UserViewController: UIViewController {
         
         self.userGreeting.text = "Welcome \(String(describing: UserDefaults.standard.object(forKey: "userName")!))"
         
-        if let token = UserDefaults.standard.object(forKey: "deviceToken") as? String{
-            print(token)
-        }
+        
         
 
         // Do any additional setup after loading the view.

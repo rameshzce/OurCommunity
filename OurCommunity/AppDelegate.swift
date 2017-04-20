@@ -165,7 +165,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         
         // Print it to console
-        print("APNs device token: \(deviceTokenString)")
+        //print("APNs device token: \(deviceTokenString)")
         
         UserDefaults.standard.set(deviceTokenString, forKey: "deviceToken")
         UserDefaults.standard.synchronize()

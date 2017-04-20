@@ -139,8 +139,8 @@ class Helper{
             if let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
             {
                 print(dataString)
-                let result = convertToDictionary(dataString as String)
-                print(result)
+                //let result = convertToDictionary(dataString as String)
+                //print(result)
             }
         }
         
