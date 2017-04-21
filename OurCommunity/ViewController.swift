@@ -60,7 +60,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
             //self.view.addSubview(loginButton)
         }
         
-        btnGSignIn.setImage(UIImage(named: "google_signin_btn1.png"), for: UIControlState.normal)
+        //btnGSignIn.setImage(UIImage(named: "google_signin_btn1.png"), for: UIControlState.normal)
         btnGSignIn.addTarget(self, action: #selector(signInBtn), for: UIControlEvents.touchUpInside)
         btnGSignIn.layer.cornerRadius = 2
         btnGSignIn.clipsToBounds = true
@@ -126,6 +126,11 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
                 object: nil,
                 userInfo: ["statusText": "Signed:\(String(describing: fullName!))"])
             // [END_EXCLUDE]
+            
+            if let token = UserDefaults.standard.object(forKey: "deviceToken") as? String{
+                self.registerUpdateUser(token, user.profile.email, user.profile.name)
+            }
+            
             self.performSegue(withIdentifier: "userSegue", sender: nil)
         }
     }

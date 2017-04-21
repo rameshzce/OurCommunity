@@ -44,11 +44,12 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ta-rg-TWX">
                                         <rect key="frame" x="68" y="210.5" width="240" height="34"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="G5s-53-AaI"/>
                                         </constraints>
                                         <state key="normal" title="Sign in with Google">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="0.0034858230009999999" green="0.12740741859999999" blue="0.7617584074" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHP-i6-ywr">
@@ -73,6 +74,13 @@
                                             <constraint firstAttribute="height" constant="100" id="ue5-BM-sSU"/>
                                         </constraints>
                                     </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google_logo_small" translatesAutoresizingMaskIntoConstraints="NO" id="sLP-8r-Qt6">
+                                        <rect key="frame" x="73" y="217.5" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="1jt-LV-6hg"/>
+                                            <constraint firstAttribute="height" constant="20" id="gPJ-lY-u9R"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="7Ta-rg-TWX" firstAttribute="centerX" secondItem="l1H-oa-QLx" secondAttribute="centerX" id="5Cb-du-2AC"/>
@@ -86,10 +94,12 @@
                                     <constraint firstItem="7Ta-rg-TWX" firstAttribute="top" secondItem="x3Y-SZ-xkv" secondAttribute="bottom" constant="40" id="eLo-oN-zod"/>
                                     <constraint firstItem="kHP-i6-ywr" firstAttribute="centerX" secondItem="7Ta-rg-TWX" secondAttribute="centerX" id="g4K-qq-Lhg"/>
                                     <constraint firstAttribute="trailing" secondItem="lw7-fc-1Om" secondAttribute="trailing" constant="8" id="k2x-vB-My5"/>
+                                    <constraint firstItem="sLP-8r-Qt6" firstAttribute="leading" secondItem="7Ta-rg-TWX" secondAttribute="leading" constant="5" id="o7e-HJ-akd"/>
                                     <constraint firstItem="7Ta-rg-TWX" firstAttribute="top" secondItem="kHP-i6-ywr" secondAttribute="bottom" constant="-2" id="qRy-C5-AQb"/>
                                     <constraint firstItem="fkl-rP-pWT" firstAttribute="top" secondItem="l1H-oa-QLx" secondAttribute="bottom" constant="20" id="qqJ-4g-J87"/>
                                     <constraint firstItem="lw7-fc-1Om" firstAttribute="top" secondItem="fkl-rP-pWT" secondAttribute="bottom" constant="100" id="rsl-4n-J9V"/>
                                     <constraint firstItem="7Ta-rg-TWX" firstAttribute="width" secondItem="l1H-oa-QLx" secondAttribute="width" id="sQL-Hn-wz8"/>
+                                    <constraint firstItem="sLP-8r-Qt6" firstAttribute="centerY" secondItem="7Ta-rg-TWX" secondAttribute="centerY" id="sla-LP-pc6"/>
                                     <constraint firstItem="7Ta-rg-TWX" firstAttribute="height" secondItem="l1H-oa-QLx" secondAttribute="height" id="uEb-g5-zou"/>
                                     <constraint firstItem="l1H-oa-QLx" firstAttribute="centerX" secondItem="fkl-rP-pWT" secondAttribute="centerX" id="w6N-s2-1aa"/>
                                     <constraint firstItem="fkl-rP-pWT" firstAttribute="centerY" secondItem="P5w-Gr-Lyq" secondAttribute="centerY" id="wlX-na-pX0"/>
@@ -218,7 +228,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UPm-C0-hHq" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="szG-OC-XdL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="szG-OC-XdL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -234,6 +244,7 @@
     </scenes>
     <resources>
         <image name="Community" width="960" height="480"/>
+        <image name="google_logo_small" width="59" height="60"/>
         <image name="logo" width="192" height="192"/>
         <image name="user_icon" width="512" height="512"/>
     </resources>
