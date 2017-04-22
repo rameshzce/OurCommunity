@@ -28,7 +28,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate, GIDSignInUIDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Helper.data_request("http://www.tokkalo.com/api/oc/community.php")
         
         if  let user = UserDefaults.standard.object(forKey: "userEmail") as?  String  {
             print("User : \(user)")
