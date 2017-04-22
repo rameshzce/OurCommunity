@@ -10,8 +10,10 @@ import UIKit
 import SCLAlertView
 import FBSDKLoginKit
 
-class UserViewController: UIViewController {
+class UserViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet var userImage: UIImageView!
+    
+    var communities = [UIImage(named: "flag1"), UIImage(named: "flag2"), UIImage(named: "flag3"), UIImage(named: "flag4")]
     
     @IBOutlet var userGreeting: UILabel!
     
@@ -93,7 +95,10 @@ class UserViewController: UIViewController {
                 let result = Helper.convertToDictionary(dataString as String)
                 print(result!)
                 
+                UserDefaults.standard.set(cName!, forKey: "communityName")
+                UserDefaults.standard.synchronize()
                 
+                self.performSegue(withIdentifier: "viewCommunity", sender: nil)
             }
             
         }
@@ -138,6 +143,18 @@ class UserViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return communities.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "communityCell", for: indexPath) as! CommunitiesCollectionViewCell
+        
+        cell.imageView.image = communities[indexPath.row]
+        
+        return cell
     }
     
 

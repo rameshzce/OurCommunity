@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		752328681EA23C7700A02BF0 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752328671EA23C7700A02BF0 /* UserViewController.swift */; };
+		75279A921EAB8FAA00F06C44 /* CommunitiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75279A911EAB8FAA00F06C44 /* CommunitiesCollectionViewCell.swift */; };
 		752A055A1E9DC9E100962290 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752A05591E9DC9E100962290 /* AppDelegate.swift */; };
 		752A055C1E9DC9E100962290 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752A055B1E9DC9E100962290 /* ViewController.swift */; };
 		752A055F1E9DC9E100962290 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752A055D1E9DC9E100962290 /* Main.storyboard */; };
 		752A05621E9DC9E100962290 /* OurCommunity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 752A05601E9DC9E100962290 /* OurCommunity.xcdatamodeld */; };
 		752A05641E9DC9E100962290 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 752A05631E9DC9E100962290 /* Assets.xcassets */; };
 		752A05671E9DC9E100962290 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752A05651E9DC9E100962290 /* LaunchScreen.storyboard */; };
+		754CB1C21EAB2212004A4C98 /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754CB1C11EAB2212004A4C98 /* CommunityViewController.swift */; };
 		754F22AD1EA6EABE00E7B9BB /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754F22AC1EA6EABE00E7B9BB /* UserNotifications.framework */; };
 		75B946421E9F14F400201ABA /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B946411E9F14F400201ABA /* FBSDKCoreKit.framework */; };
 		75B946441E9F14FF00201ABA /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75B946431E9F14FF00201ABA /* FBSDKLoginKit.framework */; };
@@ -29,6 +31,7 @@
 		21294F023C7E16A93837404E /* Pods-OurCommunity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OurCommunity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OurCommunity/Pods-OurCommunity.debug.xcconfig"; sourceTree = "<group>"; };
 		44BEF95C88EF1E3B762BC796 /* Pods_OurCommunity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OurCommunity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		752328671EA23C7700A02BF0 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		75279A911EAB8FAA00F06C44 /* CommunitiesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommunitiesCollectionViewCell.swift; path = ../CommunitiesCollectionViewCell.swift; sourceTree = "<group>"; };
 		752A05561E9DC9E100962290 /* OurCommunity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OurCommunity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		752A05591E9DC9E100962290 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		752A055B1E9DC9E100962290 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 		752A05661E9DC9E100962290 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		752A05681E9DC9E100962290 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75383AF21EA02A3B00B00CA9 /* OurCommunity.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OurCommunity.entitlements; sourceTree = "<group>"; };
+		754CB1C11EAB2212004A4C98 /* CommunityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		754F22AC1EA6EABE00E7B9BB /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		75B946411E9F14F400201ABA /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		75B946431E9F14FF00201ABA /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -105,10 +109,12 @@
 				752A055B1E9DC9E100962290 /* ViewController.swift */,
 				75BAA3651E9FCCA900F82378 /* Helper.swift */,
 				752A055D1E9DC9E100962290 /* Main.storyboard */,
+				754CB1C11EAB2212004A4C98 /* CommunityViewController.swift */,
 				752328671EA23C7700A02BF0 /* UserViewController.swift */,
 				752A05631E9DC9E100962290 /* Assets.xcassets */,
 				752A05651E9DC9E100962290 /* LaunchScreen.storyboard */,
 				752A05681E9DC9E100962290 /* Info.plist */,
+				75279A911EAB8FAA00F06C44 /* CommunitiesCollectionViewCell.swift */,
 				75E1784B1EA16F120051F16C /* GoogleService-Info.plist */,
 				752A05601E9DC9E100962290 /* OurCommunity.xcdatamodeld */,
 				75FF493D1EA0EFBD00BFFF9F /* OurCommunity-Bridging-Header.h */,
@@ -278,6 +284,8 @@
 			files = (
 				752A055C1E9DC9E100962290 /* ViewController.swift in Sources */,
 				752328681EA23C7700A02BF0 /* UserViewController.swift in Sources */,
+				754CB1C21EAB2212004A4C98 /* CommunityViewController.swift in Sources */,
+				75279A921EAB8FAA00F06C44 /* CommunitiesCollectionViewCell.swift in Sources */,
 				752A055A1E9DC9E100962290 /* AppDelegate.swift in Sources */,
 				752A05621E9DC9E100962290 /* OurCommunity.xcdatamodeld in Sources */,
 				75BAA3661E9FCCA900F82378 /* Helper.swift in Sources */,
