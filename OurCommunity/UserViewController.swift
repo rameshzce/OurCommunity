@@ -13,7 +13,11 @@ import FBSDKLoginKit
 class UserViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet var userImage: UIImageView!
     
+    var cName: String = ""
+    
+    @IBOutlet var collectionView: UICollectionView!
     var communities = [UIImage(named: "flag1"), UIImage(named: "flag2"), UIImage(named: "flag3"), UIImage(named: "flag4")]
+    var names = ["one", "two", "three", "four"]
     
     @IBOutlet var userGreeting: UILabel!
     
@@ -154,8 +158,52 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         cell.imageView.image = communities[indexPath.row]
         
+        cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width / 2;
+        cell.imageView.clipsToBounds = true
+        
+        cell.imageView.layer.borderWidth = 5.0
+        cell.imageView.layer.borderColor = Helper.hexStringToUIColor("#C4C4C4").cgColor
+        
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(names)
+        print(indexPath.item)
+        cName = names[indexPath.row]
+        UserDefaults.standard.set(cName, forKey: "communityName")
+        UserDefaults.standard.synchronize()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        /*print("prepare= \(cName)")
+        if segue.identifier == "community"{
+            let destinationViewController = segue.destination as! CommunityViewController
+            destinationViewController.cName = "ramesh"
+        }*/
+        
+        if let indexPath = getIndexPathForSelectedCell() {
+            if segue.identifier == "community"{
+                let fruit = names[indexPath.row]
+                
+                print("prepare= \(fruit)")
+            
+                let detailViewController = segue.destination as! CommunityViewController
+                detailViewController.cName = fruit
+            }
+        }
+    }
+    
+    func getIndexPathForSelectedCell() -> NSIndexPath? {
+    
+        var indexPath:NSIndexPath?
+    
+        if (collectionView.indexPathsForSelectedItems?.count)! > 0 {
+            indexPath = collectionView.indexPathsForSelectedItems?[0] as NSIndexPath?
+        }
+        return indexPath
+    }
+    
     
 
     /*

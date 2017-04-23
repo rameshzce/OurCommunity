@@ -219,10 +219,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QR2-iB-Oa0">
-                                                    <rect key="frame" x="20" y="16" width="150" height="150"/>
+                                                    <rect key="frame" x="30" y="26" width="130" height="130"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="150" id="7E4-XH-4SB"/>
-                                                        <constraint firstAttribute="height" constant="150" id="ElH-Td-hR9"/>
+                                                        <constraint firstAttribute="width" constant="130" id="7E4-XH-4SB"/>
+                                                        <constraint firstAttribute="height" constant="130" id="ElH-Td-hR9"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -233,6 +233,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="QR2-iB-Oa0" id="zvF-bp-xUU"/>
+                                            <segue destination="Ie7-MU-inL" kind="show" identifier="community" id="0nO-x4-Aq3"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -262,6 +263,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="0bN-Jc-d8y" id="GEf-CY-9jV"/>
                         <outlet property="userGreeting" destination="Wn1-qL-H1v" id="Z4S-Sr-JPa"/>
                         <outlet property="userImage" destination="OXe-ib-p9o" id="vFI-Al-Bsu"/>
                         <segue destination="UPm-C0-hHq" kind="presentation" identifier="signOut" id="Ul9-u9-y8E"/>
@@ -323,7 +325,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y95-hN-F7N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2368.8000000000002" y="36.431784107946029"/>
+            <point key="canvasLocation" x="2526" y="28"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lGl-22-mJe">
@@ -351,6 +353,7 @@
         <image name="user_icon" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LxG-Fu-z3w"/>
+        <segue reference="GQj-SX-hUF"/>
+        <segue reference="0nO-x4-Aq3"/>
     </inferredMetricsTieBreakers>
 </document>

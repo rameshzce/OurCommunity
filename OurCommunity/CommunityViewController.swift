@@ -10,6 +10,9 @@ import UIKit
 
 class CommunityViewController: UIViewController {
     @IBOutlet var communityName: UILabel!
+    
+    var cName: String = ""
+    
     @IBAction func goHome(_ sender: Any) {
         self.performSegue(withIdentifier: "goHome", sender: nil)
     }
@@ -17,9 +20,12 @@ class CommunityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.communityName.text = UserDefaults.standard.object(forKey: "communityName") as? String
+        //self.communityName.text = UserDefaults.standard.object(forKey: "communityName") as? String
+        self.communityName.text = self.cName
 
         // Do any additional setup after loading the view.
+  
+        
     }
 
     override func didReceiveMemoryWarning() {
